@@ -142,11 +142,23 @@ def render(name: str, method: str, path: str, operation: dict) -> str:
     args: list[str] = []
     doc_args: list[str] = []
 
+    # A path parameter and a query parameter can share a name; the second one
+    # to claim an identifier gets suffixed, and the wire name is unaffected.
+    used: dict[str, str] = {}
+
+    def claim(name: str, suffix: str) -> str:
+        ident = _param(name)
+        if ident in used.values():
+            ident = f"{ident}_{suffix}"
+        used[name + suffix] = ident
+        return ident
+
     for param in path_params:
         kind = py_type(param.get("schema"))
-        args.append(f"{_param(param['name'])}: {kind}")
+        ident = claim(param["name"], "path")
+        args.append(f"{ident}: {kind}")
         doc_args.append(
-            f"        {_param(param['name'])}: {param.get('description') or 'Path parameter.'}"
+            f"        {ident}: {param.get('description') or 'Path parameter.'}"
         )
 
     if has_body:
@@ -156,11 +168,14 @@ def render(name: str, method: str, path: str, operation: dict) -> str:
             "/schema endpoint first to see the fields this resource expects."
         )
 
+    query_idents: dict[str, str] = {}
     for param in query_params:
         kind = py_type(param.get("schema"))
-        args.append(f"{_param(param['name'])}: {kind} | None = {default_for(kind)}")
+        ident = claim(param["name"], "query")
+        query_idents[param["name"]] = ident
+        args.append(f"{ident}: {kind} | None = {default_for(kind)}")
         doc_args.append(
-            f"        {_param(param['name'])}: {param.get('description') or 'Query parameter.'}"
+            f"        {ident}: {param.get('description') or 'Query parameter.'}"
         )
 
     if method in _READ_METHODS:
@@ -172,12 +187,14 @@ def render(name: str, method: str, path: str, operation: dict) -> str:
 
     url = path
     for param in path_params:
-        url = url.replace("{" + param["name"] + "}", "{" + _param(param["name"]) + "}")
+        url = url.replace(
+            "{" + param["name"] + "}", "{" + used[param["name"] + "path"] + "}"
+        )
     url_expr = f'f"{url}"' if path_params else f'"{url}"'
 
     query_expr = (
         "{"
-        + ", ".join(f'"{p["name"]}": {_param(p["name"])}' for p in query_params)
+        + ", ".join(f'"{p["name"]}": {query_idents[p["name"]]}' for p in query_params)
         + "}"
         if query_params
         else "None"
