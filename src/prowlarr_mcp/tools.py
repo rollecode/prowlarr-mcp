@@ -20,7 +20,7 @@ def create_applications(body: dict, force_save: bool | None = None) -> str:
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
         force_save: Query parameter.
     """
-    return call("POST", "/api/v1/applications", query={"forceSave": force_save}, body=body)
+    return call("POST", "/api/v1/applications", query={"forceSave": force_save}, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -33,7 +33,7 @@ def create_applications_action_by_name(name: str, body: dict) -> str:
         name: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/api/v1/applications/action/{name}", query=None, body=body)
+    return call("POST", f"/api/v1/applications/action/{name}", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -46,7 +46,7 @@ def create_applications_test(body: dict, force_test: bool | None = None) -> str:
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
         force_test: Query parameter.
     """
-    return call("POST", "/api/v1/applications/test", query={"forceTest": force_test}, body=body)
+    return call("POST", "/api/v1/applications/test", query={"forceTest": force_test}, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -55,7 +55,7 @@ def create_applications_testall() -> str:
 
     POST /api/v1/applications/testall
     """
-    return call("POST", "/api/v1/applications/testall", query=None, body=None)
+    return call("POST", "/api/v1/applications/testall", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -67,7 +67,7 @@ def create_appprofile(body: dict) -> str:
     Args:
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", "/api/v1/appprofile", query=None, body=body)
+    return call("POST", "/api/v1/appprofile", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -79,7 +79,7 @@ def create_command(body: dict) -> str:
     Args:
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", "/api/v1/command", query=None, body=body)
+    return call("POST", "/api/v1/command", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -91,7 +91,7 @@ def create_customfilter(body: dict) -> str:
     Args:
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", "/api/v1/customfilter", query=None, body=body)
+    return call("POST", "/api/v1/customfilter", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -104,7 +104,7 @@ def create_downloadclient(body: dict, force_save: bool | None = None) -> str:
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
         force_save: Query parameter.
     """
-    return call("POST", "/api/v1/downloadclient", query={"forceSave": force_save}, body=body)
+    return call("POST", "/api/v1/downloadclient", query={"forceSave": force_save}, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -117,7 +117,7 @@ def create_downloadclient_action_by_name(name: str, body: dict) -> str:
         name: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/api/v1/downloadclient/action/{name}", query=None, body=body)
+    return call("POST", f"/api/v1/downloadclient/action/{name}", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -130,7 +130,7 @@ def create_downloadclient_test(body: dict, force_test: bool | None = None) -> st
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
         force_test: Query parameter.
     """
-    return call("POST", "/api/v1/downloadclient/test", query={"forceTest": force_test}, body=body)
+    return call("POST", "/api/v1/downloadclient/test", query={"forceTest": force_test}, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -139,7 +139,7 @@ def create_downloadclient_testall() -> str:
 
     POST /api/v1/downloadclient/testall
     """
-    return call("POST", "/api/v1/downloadclient/testall", query=None, body=None)
+    return call("POST", "/api/v1/downloadclient/testall", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -152,7 +152,7 @@ def create_indexer(body: dict, force_save: bool | None = None) -> str:
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
         force_save: Query parameter.
     """
-    return call("POST", "/api/v1/indexer", query={"forceSave": force_save}, body=body)
+    return call("POST", "/api/v1/indexer", query={"forceSave": force_save}, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -165,7 +165,7 @@ def create_indexer_action_by_name(name: str, body: dict) -> str:
         name: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/api/v1/indexer/action/{name}", query=None, body=body)
+    return call("POST", f"/api/v1/indexer/action/{name}", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -178,7 +178,7 @@ def create_indexer_test(body: dict, force_test: bool | None = None) -> str:
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
         force_test: Query parameter.
     """
-    return call("POST", "/api/v1/indexer/test", query={"forceTest": force_test}, body=body)
+    return call("POST", "/api/v1/indexer/test", query={"forceTest": force_test}, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -187,7 +187,7 @@ def create_indexer_testall() -> str:
 
     POST /api/v1/indexer/testall
     """
-    return call("POST", "/api/v1/indexer/testall", query=None, body=None)
+    return call("POST", "/api/v1/indexer/testall", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -200,7 +200,7 @@ def create_indexerproxy(body: dict, force_save: bool | None = None) -> str:
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
         force_save: Query parameter.
     """
-    return call("POST", "/api/v1/indexerproxy", query={"forceSave": force_save}, body=body)
+    return call("POST", "/api/v1/indexerproxy", query={"forceSave": force_save}, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -213,7 +213,7 @@ def create_indexerproxy_action_by_name(name: str, body: dict) -> str:
         name: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/api/v1/indexerproxy/action/{name}", query=None, body=body)
+    return call("POST", f"/api/v1/indexerproxy/action/{name}", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -226,7 +226,7 @@ def create_indexerproxy_test(body: dict, force_test: bool | None = None) -> str:
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
         force_test: Query parameter.
     """
-    return call("POST", "/api/v1/indexerproxy/test", query={"forceTest": force_test}, body=body)
+    return call("POST", "/api/v1/indexerproxy/test", query={"forceTest": force_test}, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -235,7 +235,7 @@ def create_indexerproxy_testall() -> str:
 
     POST /api/v1/indexerproxy/testall
     """
-    return call("POST", "/api/v1/indexerproxy/testall", query=None, body=None)
+    return call("POST", "/api/v1/indexerproxy/testall", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -248,7 +248,7 @@ def create_login(body: dict, return_url: str | None = None) -> str:
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
         return_url: Query parameter.
     """
-    return call("POST", "/login", query={"returnUrl": return_url}, body=body)
+    return call("POST", "/login", query={"returnUrl": return_url}, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -261,7 +261,7 @@ def create_notification(body: dict, force_save: bool | None = None) -> str:
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
         force_save: Query parameter.
     """
-    return call("POST", "/api/v1/notification", query={"forceSave": force_save}, body=body)
+    return call("POST", "/api/v1/notification", query={"forceSave": force_save}, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -274,7 +274,7 @@ def create_notification_action_by_name(name: str, body: dict) -> str:
         name: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", f"/api/v1/notification/action/{name}", query=None, body=body)
+    return call("POST", f"/api/v1/notification/action/{name}", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -287,7 +287,7 @@ def create_notification_test(body: dict, force_test: bool | None = None) -> str:
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
         force_test: Query parameter.
     """
-    return call("POST", "/api/v1/notification/test", query={"forceTest": force_test}, body=body)
+    return call("POST", "/api/v1/notification/test", query={"forceTest": force_test}, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -296,7 +296,7 @@ def create_notification_testall() -> str:
 
     POST /api/v1/notification/testall
     """
-    return call("POST", "/api/v1/notification/testall", query=None, body=None)
+    return call("POST", "/api/v1/notification/testall", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -308,7 +308,7 @@ def create_search(body: dict) -> str:
     Args:
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", "/api/v1/search", query=None, body=body)
+    return call("POST", "/api/v1/search", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -320,7 +320,7 @@ def create_search_bulk(body: dict) -> str:
     Args:
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", "/api/v1/search/bulk", query=None, body=body)
+    return call("POST", "/api/v1/search/bulk", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -332,7 +332,7 @@ def create_system_backup_restore_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("POST", f"/api/v1/system/backup/restore/{id_}", query=None, body=None)
+    return call("POST", f"/api/v1/system/backup/restore/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -341,7 +341,7 @@ def create_system_backup_restore_upload() -> str:
 
     POST /api/v1/system/backup/restore/upload
     """
-    return call("POST", "/api/v1/system/backup/restore/upload", query=None, body=None)
+    return call("POST", "/api/v1/system/backup/restore/upload", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -350,7 +350,7 @@ def create_system_restart() -> str:
 
     POST /api/v1/system/restart
     """
-    return call("POST", "/api/v1/system/restart", query=None, body=None)
+    return call("POST", "/api/v1/system/restart", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -359,7 +359,7 @@ def create_system_shutdown() -> str:
 
     POST /api/v1/system/shutdown
     """
-    return call("POST", "/api/v1/system/shutdown", query=None, body=None)
+    return call("POST", "/api/v1/system/shutdown", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -371,7 +371,7 @@ def create_tag(body: dict) -> str:
     Args:
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("POST", "/api/v1/tag", query=None, body=body)
+    return call("POST", "/api/v1/tag", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
@@ -383,7 +383,7 @@ def delete_applications_bulk(body: dict) -> str:
     Args:
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("DELETE", "/api/v1/applications/bulk", query=None, body=body)
+    return call("DELETE", "/api/v1/applications/bulk", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
@@ -395,7 +395,7 @@ def delete_applications_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("DELETE", f"/api/v1/applications/{id_}", query=None, body=None)
+    return call("DELETE", f"/api/v1/applications/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
@@ -407,7 +407,7 @@ def delete_appprofile_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("DELETE", f"/api/v1/appprofile/{id_}", query=None, body=None)
+    return call("DELETE", f"/api/v1/appprofile/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
@@ -419,7 +419,7 @@ def delete_command_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("DELETE", f"/api/v1/command/{id_}", query=None, body=None)
+    return call("DELETE", f"/api/v1/command/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
@@ -431,7 +431,7 @@ def delete_customfilter_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("DELETE", f"/api/v1/customfilter/{id_}", query=None, body=None)
+    return call("DELETE", f"/api/v1/customfilter/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
@@ -443,7 +443,7 @@ def delete_downloadclient_bulk(body: dict) -> str:
     Args:
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("DELETE", "/api/v1/downloadclient/bulk", query=None, body=body)
+    return call("DELETE", "/api/v1/downloadclient/bulk", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
@@ -455,7 +455,7 @@ def delete_downloadclient_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("DELETE", f"/api/v1/downloadclient/{id_}", query=None, body=None)
+    return call("DELETE", f"/api/v1/downloadclient/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
@@ -467,7 +467,7 @@ def delete_indexer_bulk(body: dict) -> str:
     Args:
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("DELETE", "/api/v1/indexer/bulk", query=None, body=body)
+    return call("DELETE", "/api/v1/indexer/bulk", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
@@ -479,7 +479,7 @@ def delete_indexer_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("DELETE", f"/api/v1/indexer/{id_}", query=None, body=None)
+    return call("DELETE", f"/api/v1/indexer/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
@@ -491,7 +491,7 @@ def delete_indexerproxy_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("DELETE", f"/api/v1/indexerproxy/{id_}", query=None, body=None)
+    return call("DELETE", f"/api/v1/indexerproxy/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
@@ -503,7 +503,7 @@ def delete_notification_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("DELETE", f"/api/v1/notification/{id_}", query=None, body=None)
+    return call("DELETE", f"/api/v1/notification/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
@@ -515,7 +515,7 @@ def delete_system_backup_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("DELETE", f"/api/v1/system/backup/{id_}", query=None, body=None)
+    return call("DELETE", f"/api/v1/system/backup/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_DESTRUCTIVE)
@@ -527,7 +527,7 @@ def delete_tag_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("DELETE", f"/api/v1/tag/{id_}", query=None, body=None)
+    return call("DELETE", f"/api/v1/tag/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -539,7 +539,7 @@ def get_applications_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("GET", f"/api/v1/applications/{id_}", query=None, body=None)
+    return call("GET", f"/api/v1/applications/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -551,7 +551,7 @@ def get_appprofile_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("GET", f"/api/v1/appprofile/{id_}", query=None, body=None)
+    return call("GET", f"/api/v1/appprofile/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -595,7 +595,7 @@ def get_by_id_api(id_: int, t: str | None = None, q: str | None = None, cat: str
         host: Query parameter.
         server: Query parameter.
     """
-    return call("GET", f"/{id_}/api", query={"t": t, "q": q, "cat": cat, "imdbid": imdbid, "tmdbid": tmdbid, "extended": extended, "limit": limit, "offset": offset, "minage": minage, "maxage": maxage, "minsize": minsize, "maxsize": maxsize, "rid": rid, "tvmazeid": tvmazeid, "traktid": traktid, "tvdbid": tvdbid, "doubanid": doubanid, "season": season, "ep": ep, "album": album, "artist": artist, "label": label, "track": track, "year": year, "genre": genre, "author": author, "title": title, "publisher": publisher, "configured": configured, "source": source, "host": host, "server": server}, body=None)
+    return call("GET", f"/{id_}/api", query={"t": t, "q": q, "cat": cat, "imdbid": imdbid, "tmdbid": tmdbid, "extended": extended, "limit": limit, "offset": offset, "minage": minage, "maxage": maxage, "minsize": minsize, "maxsize": maxsize, "rid": rid, "tvmazeid": tvmazeid, "traktid": traktid, "tvdbid": tvdbid, "doubanid": doubanid, "season": season, "ep": ep, "album": album, "artist": artist, "label": label, "track": track, "year": year, "genre": genre, "author": author, "title": title, "publisher": publisher, "configured": configured, "source": source, "host": host, "server": server}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -609,7 +609,7 @@ def get_by_id_download(id_: int, link: str | None = None, file: str | None = Non
         link: Query parameter.
         file: Query parameter.
     """
-    return call("GET", f"/{id_}/download", query={"link": link, "file": file}, body=None)
+    return call("GET", f"/{id_}/download", query={"link": link, "file": file}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -621,7 +621,7 @@ def get_by_path(path: str) -> str:
     Args:
         path: Path parameter.
     """
-    return call("GET", f"/{path}", query=None, body=None)
+    return call("GET", f"/{path}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -633,7 +633,7 @@ def get_command_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("GET", f"/api/v1/command/{id_}", query=None, body=None)
+    return call("GET", f"/api/v1/command/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -645,7 +645,7 @@ def get_config_development_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("GET", f"/api/v1/config/development/{id_}", query=None, body=None)
+    return call("GET", f"/api/v1/config/development/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -657,7 +657,7 @@ def get_config_downloadclient_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("GET", f"/api/v1/config/downloadclient/{id_}", query=None, body=None)
+    return call("GET", f"/api/v1/config/downloadclient/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -669,7 +669,7 @@ def get_config_host_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("GET", f"/api/v1/config/host/{id_}", query=None, body=None)
+    return call("GET", f"/api/v1/config/host/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -681,7 +681,7 @@ def get_config_ui_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("GET", f"/api/v1/config/ui/{id_}", query=None, body=None)
+    return call("GET", f"/api/v1/config/ui/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -693,7 +693,7 @@ def get_content_by_path(path: str) -> str:
     Args:
         path: Path parameter.
     """
-    return call("GET", f"/content/{path}", query=None, body=None)
+    return call("GET", f"/content/{path}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -705,7 +705,7 @@ def get_customfilter_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("GET", f"/api/v1/customfilter/{id_}", query=None, body=None)
+    return call("GET", f"/api/v1/customfilter/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -717,7 +717,7 @@ def get_downloadclient_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("GET", f"/api/v1/downloadclient/{id_}", query=None, body=None)
+    return call("GET", f"/api/v1/downloadclient/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -729,7 +729,7 @@ def get_indexer_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("GET", f"/api/v1/indexer/{id_}", query=None, body=None)
+    return call("GET", f"/api/v1/indexer/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -743,7 +743,7 @@ def get_indexer_by_id_download(id_: int, link: str | None = None, file: str | No
         link: Query parameter.
         file: Query parameter.
     """
-    return call("GET", f"/api/v1/indexer/{id_}/download", query={"link": link, "file": file}, body=None)
+    return call("GET", f"/api/v1/indexer/{id_}/download", query={"link": link, "file": file}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -787,7 +787,7 @@ def get_indexer_by_id_newznab(id_: int, t: str | None = None, q: str | None = No
         host: Query parameter.
         server: Query parameter.
     """
-    return call("GET", f"/api/v1/indexer/{id_}/newznab", query={"t": t, "q": q, "cat": cat, "imdbid": imdbid, "tmdbid": tmdbid, "extended": extended, "limit": limit, "offset": offset, "minage": minage, "maxage": maxage, "minsize": minsize, "maxsize": maxsize, "rid": rid, "tvmazeid": tvmazeid, "traktid": traktid, "tvdbid": tvdbid, "doubanid": doubanid, "season": season, "ep": ep, "album": album, "artist": artist, "label": label, "track": track, "year": year, "genre": genre, "author": author, "title": title, "publisher": publisher, "configured": configured, "source": source, "host": host, "server": server}, body=None)
+    return call("GET", f"/api/v1/indexer/{id_}/newznab", query={"t": t, "q": q, "cat": cat, "imdbid": imdbid, "tmdbid": tmdbid, "extended": extended, "limit": limit, "offset": offset, "minage": minage, "maxage": maxage, "minsize": minsize, "maxsize": maxsize, "rid": rid, "tvmazeid": tvmazeid, "traktid": traktid, "tvdbid": tvdbid, "doubanid": doubanid, "season": season, "ep": ep, "album": album, "artist": artist, "label": label, "track": track, "year": year, "genre": genre, "author": author, "title": title, "publisher": publisher, "configured": configured, "source": source, "host": host, "server": server}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -799,7 +799,7 @@ def get_indexerproxy_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("GET", f"/api/v1/indexerproxy/{id_}", query=None, body=None)
+    return call("GET", f"/api/v1/indexerproxy/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -811,7 +811,7 @@ def get_log_file_by_filename(filename: str) -> str:
     Args:
         filename: Path parameter.
     """
-    return call("GET", f"/api/v1/log/file/{filename}", query=None, body=None)
+    return call("GET", f"/api/v1/log/file/{filename}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -823,7 +823,7 @@ def get_log_file_update_by_filename(filename: str) -> str:
     Args:
         filename: Path parameter.
     """
-    return call("GET", f"/api/v1/log/file/update/{filename}", query=None, body=None)
+    return call("GET", f"/api/v1/log/file/update/{filename}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -835,7 +835,7 @@ def get_notification_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("GET", f"/api/v1/notification/{id_}", query=None, body=None)
+    return call("GET", f"/api/v1/notification/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -847,7 +847,7 @@ def get_system_task_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("GET", f"/api/v1/system/task/{id_}", query=None, body=None)
+    return call("GET", f"/api/v1/system/task/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -859,7 +859,7 @@ def get_tag_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("GET", f"/api/v1/tag/{id_}", query=None, body=None)
+    return call("GET", f"/api/v1/tag/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -871,7 +871,7 @@ def get_tag_detail_by_id(id_: int) -> str:
     Args:
         id_: Path parameter.
     """
-    return call("GET", f"/api/v1/tag/detail/{id_}", query=None, body=None)
+    return call("GET", f"/api/v1/tag/detail/{id_}", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -880,7 +880,7 @@ def list_api() -> str:
 
     GET /api
     """
-    return call("GET", "/api", query=None, body=None)
+    return call("GET", "/api", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -889,7 +889,7 @@ def list_applications() -> str:
 
     GET /api/v1/applications
     """
-    return call("GET", "/api/v1/applications", query=None, body=None)
+    return call("GET", "/api/v1/applications", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -898,7 +898,7 @@ def list_applications_schema() -> str:
 
     GET /api/v1/applications/schema
     """
-    return call("GET", "/api/v1/applications/schema", query=None, body=None)
+    return call("GET", "/api/v1/applications/schema", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -907,7 +907,7 @@ def list_appprofile() -> str:
 
     GET /api/v1/appprofile
     """
-    return call("GET", "/api/v1/appprofile", query=None, body=None)
+    return call("GET", "/api/v1/appprofile", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -916,7 +916,7 @@ def list_appprofile_schema() -> str:
 
     GET /api/v1/appprofile/schema
     """
-    return call("GET", "/api/v1/appprofile/schema", query=None, body=None)
+    return call("GET", "/api/v1/appprofile/schema", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -925,7 +925,7 @@ def list_command() -> str:
 
     GET /api/v1/command
     """
-    return call("GET", "/api/v1/command", query=None, body=None)
+    return call("GET", "/api/v1/command", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -934,7 +934,7 @@ def list_config_development() -> str:
 
     GET /api/v1/config/development
     """
-    return call("GET", "/api/v1/config/development", query=None, body=None)
+    return call("GET", "/api/v1/config/development", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -943,7 +943,7 @@ def list_config_downloadclient() -> str:
 
     GET /api/v1/config/downloadclient
     """
-    return call("GET", "/api/v1/config/downloadclient", query=None, body=None)
+    return call("GET", "/api/v1/config/downloadclient", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -952,7 +952,7 @@ def list_config_host() -> str:
 
     GET /api/v1/config/host
     """
-    return call("GET", "/api/v1/config/host", query=None, body=None)
+    return call("GET", "/api/v1/config/host", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -961,7 +961,7 @@ def list_config_ui() -> str:
 
     GET /api/v1/config/ui
     """
-    return call("GET", "/api/v1/config/ui", query=None, body=None)
+    return call("GET", "/api/v1/config/ui", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -970,7 +970,7 @@ def list_customfilter() -> str:
 
     GET /api/v1/customfilter
     """
-    return call("GET", "/api/v1/customfilter", query=None, body=None)
+    return call("GET", "/api/v1/customfilter", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -979,7 +979,7 @@ def list_downloadclient() -> str:
 
     GET /api/v1/downloadclient
     """
-    return call("GET", "/api/v1/downloadclient", query=None, body=None)
+    return call("GET", "/api/v1/downloadclient", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -988,7 +988,7 @@ def list_downloadclient_schema() -> str:
 
     GET /api/v1/downloadclient/schema
     """
-    return call("GET", "/api/v1/downloadclient/schema", query=None, body=None)
+    return call("GET", "/api/v1/downloadclient/schema", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1002,7 +1002,7 @@ def list_filesystem(path: str | None = None, include_files: bool | None = None, 
         include_files: Query parameter.
         allow_folders_without_trailing_slashes: Query parameter.
     """
-    return call("GET", "/api/v1/filesystem", query={"path": path, "includeFiles": include_files, "allowFoldersWithoutTrailingSlashes": allow_folders_without_trailing_slashes}, body=None)
+    return call("GET", "/api/v1/filesystem", query={"path": path, "includeFiles": include_files, "allowFoldersWithoutTrailingSlashes": allow_folders_without_trailing_slashes}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1014,7 +1014,7 @@ def list_filesystem_type(path: str | None = None) -> str:
     Args:
         path: Query parameter.
     """
-    return call("GET", "/api/v1/filesystem/type", query={"path": path}, body=None)
+    return call("GET", "/api/v1/filesystem/type", query={"path": path}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1023,7 +1023,7 @@ def list_health() -> str:
 
     GET /api/v1/health
     """
-    return call("GET", "/api/v1/health", query=None, body=None)
+    return call("GET", "/api/v1/health", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1042,7 +1042,7 @@ def list_history(page: int | None = None, page_size: int | None = None, sort_key
         download_id: Query parameter.
         indexer_ids: Query parameter.
     """
-    return call("GET", "/api/v1/history", query={"page": page, "pageSize": page_size, "sortKey": sort_key, "sortDirection": sort_direction, "eventType": event_type, "successful": successful, "downloadId": download_id, "indexerIds": indexer_ids}, body=None)
+    return call("GET", "/api/v1/history", query={"page": page, "pageSize": page_size, "sortKey": sort_key, "sortDirection": sort_direction, "eventType": event_type, "successful": successful, "downloadId": download_id, "indexerIds": indexer_ids}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1056,7 +1056,7 @@ def list_history_indexer(indexer_id: int | None = None, event_type: dict | None 
         event_type: Query parameter.
         limit: Query parameter.
     """
-    return call("GET", "/api/v1/history/indexer", query={"indexerId": indexer_id, "eventType": event_type, "limit": limit}, body=None)
+    return call("GET", "/api/v1/history/indexer", query={"indexerId": indexer_id, "eventType": event_type, "limit": limit}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1069,7 +1069,7 @@ def list_history_since(date: str | None = None, event_type: dict | None = None) 
         date: Query parameter.
         event_type: Query parameter.
     """
-    return call("GET", "/api/v1/history/since", query={"date": date, "eventType": event_type}, body=None)
+    return call("GET", "/api/v1/history/since", query={"date": date, "eventType": event_type}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1078,7 +1078,7 @@ def list_indexer() -> str:
 
     GET /api/v1/indexer
     """
-    return call("GET", "/api/v1/indexer", query=None, body=None)
+    return call("GET", "/api/v1/indexer", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1087,7 +1087,7 @@ def list_indexer_categories() -> str:
 
     GET /api/v1/indexer/categories
     """
-    return call("GET", "/api/v1/indexer/categories", query=None, body=None)
+    return call("GET", "/api/v1/indexer/categories", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1096,7 +1096,7 @@ def list_indexer_schema() -> str:
 
     GET /api/v1/indexer/schema
     """
-    return call("GET", "/api/v1/indexer/schema", query=None, body=None)
+    return call("GET", "/api/v1/indexer/schema", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1105,7 +1105,7 @@ def list_indexerproxy() -> str:
 
     GET /api/v1/indexerproxy
     """
-    return call("GET", "/api/v1/indexerproxy", query=None, body=None)
+    return call("GET", "/api/v1/indexerproxy", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1114,7 +1114,7 @@ def list_indexerproxy_schema() -> str:
 
     GET /api/v1/indexerproxy/schema
     """
-    return call("GET", "/api/v1/indexerproxy/schema", query=None, body=None)
+    return call("GET", "/api/v1/indexerproxy/schema", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1130,7 +1130,7 @@ def list_indexerstats(start_date: str | None = None, end_date: str | None = None
         protocols: Query parameter.
         tags: Query parameter.
     """
-    return call("GET", "/api/v1/indexerstats", query={"startDate": start_date, "endDate": end_date, "indexers": indexers, "protocols": protocols, "tags": tags}, body=None)
+    return call("GET", "/api/v1/indexerstats", query={"startDate": start_date, "endDate": end_date, "indexers": indexers, "protocols": protocols, "tags": tags}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1139,7 +1139,7 @@ def list_indexerstatus() -> str:
 
     GET /api/v1/indexerstatus
     """
-    return call("GET", "/api/v1/indexerstatus", query=None, body=None)
+    return call("GET", "/api/v1/indexerstatus", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1148,7 +1148,7 @@ def list_localization() -> str:
 
     GET /api/v1/localization
     """
-    return call("GET", "/api/v1/localization", query=None, body=None)
+    return call("GET", "/api/v1/localization", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1157,7 +1157,7 @@ def list_localization_options() -> str:
 
     GET /api/v1/localization/options
     """
-    return call("GET", "/api/v1/localization/options", query=None, body=None)
+    return call("GET", "/api/v1/localization/options", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1173,7 +1173,7 @@ def list_log(page: int | None = None, page_size: int | None = None, sort_key: st
         sort_direction: Query parameter.
         level: Query parameter.
     """
-    return call("GET", "/api/v1/log", query={"page": page, "pageSize": page_size, "sortKey": sort_key, "sortDirection": sort_direction, "level": level}, body=None)
+    return call("GET", "/api/v1/log", query={"page": page, "pageSize": page_size, "sortKey": sort_key, "sortDirection": sort_direction, "level": level}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1182,7 +1182,7 @@ def list_log_file() -> str:
 
     GET /api/v1/log/file
     """
-    return call("GET", "/api/v1/log/file", query=None, body=None)
+    return call("GET", "/api/v1/log/file", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1191,7 +1191,7 @@ def list_log_file_update() -> str:
 
     GET /api/v1/log/file/update
     """
-    return call("GET", "/api/v1/log/file/update", query=None, body=None)
+    return call("GET", "/api/v1/log/file/update", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1200,7 +1200,7 @@ def list_login() -> str:
 
     GET /login
     """
-    return call("GET", "/login", query=None, body=None)
+    return call("GET", "/login", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1209,7 +1209,7 @@ def list_logout() -> str:
 
     GET /logout
     """
-    return call("GET", "/logout", query=None, body=None)
+    return call("GET", "/logout", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1218,7 +1218,7 @@ def list_notification() -> str:
 
     GET /api/v1/notification
     """
-    return call("GET", "/api/v1/notification", query=None, body=None)
+    return call("GET", "/api/v1/notification", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1227,7 +1227,7 @@ def list_notification_schema() -> str:
 
     GET /api/v1/notification/schema
     """
-    return call("GET", "/api/v1/notification/schema", query=None, body=None)
+    return call("GET", "/api/v1/notification/schema", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1236,7 +1236,7 @@ def list_ping() -> str:
 
     GET /ping
     """
-    return call("GET", "/ping", query=None, body=None)
+    return call("GET", "/ping", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1248,7 +1248,7 @@ def list_root(path: str) -> str:
     Args:
         path: Path parameter.
     """
-    return call("GET", "/", query=None, body=None)
+    return call("GET", "/", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1265,7 +1265,7 @@ def list_search(query: str | None = None, type_: str | None = None, indexer_ids:
         limit: Query parameter.
         offset: Query parameter.
     """
-    return call("GET", "/api/v1/search", query={"query": query, "type": type_, "indexerIds": indexer_ids, "categories": categories, "limit": limit, "offset": offset}, body=None)
+    return call("GET", "/api/v1/search", query={"query": query, "type": type_, "indexerIds": indexer_ids, "categories": categories, "limit": limit, "offset": offset}, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1274,7 +1274,7 @@ def list_system_backup() -> str:
 
     GET /api/v1/system/backup
     """
-    return call("GET", "/api/v1/system/backup", query=None, body=None)
+    return call("GET", "/api/v1/system/backup", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1283,7 +1283,7 @@ def list_system_routes() -> str:
 
     GET /api/v1/system/routes
     """
-    return call("GET", "/api/v1/system/routes", query=None, body=None)
+    return call("GET", "/api/v1/system/routes", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1292,7 +1292,7 @@ def list_system_routes_duplicate() -> str:
 
     GET /api/v1/system/routes/duplicate
     """
-    return call("GET", "/api/v1/system/routes/duplicate", query=None, body=None)
+    return call("GET", "/api/v1/system/routes/duplicate", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1301,7 +1301,7 @@ def list_system_status() -> str:
 
     GET /api/v1/system/status
     """
-    return call("GET", "/api/v1/system/status", query=None, body=None)
+    return call("GET", "/api/v1/system/status", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1310,7 +1310,7 @@ def list_system_task() -> str:
 
     GET /api/v1/system/task
     """
-    return call("GET", "/api/v1/system/task", query=None, body=None)
+    return call("GET", "/api/v1/system/task", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1319,7 +1319,7 @@ def list_tag() -> str:
 
     GET /api/v1/tag
     """
-    return call("GET", "/api/v1/tag", query=None, body=None)
+    return call("GET", "/api/v1/tag", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1328,7 +1328,7 @@ def list_tag_detail() -> str:
 
     GET /api/v1/tag/detail
     """
-    return call("GET", "/api/v1/tag/detail", query=None, body=None)
+    return call("GET", "/api/v1/tag/detail", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_READ)
@@ -1337,7 +1337,7 @@ def list_update() -> str:
 
     GET /api/v1/update
     """
-    return call("GET", "/api/v1/update", query=None, body=None)
+    return call("GET", "/api/v1/update", query=None, body=None, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -1349,7 +1349,7 @@ def update_applications_bulk(body: dict) -> str:
     Args:
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("PUT", "/api/v1/applications/bulk", query=None, body=body)
+    return call("PUT", "/api/v1/applications/bulk", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -1363,7 +1363,7 @@ def update_applications_by_id(id_: str, body: dict, force_save: bool | None = No
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
         force_save: Query parameter.
     """
-    return call("PUT", f"/api/v1/applications/{id_}", query={"forceSave": force_save}, body=body)
+    return call("PUT", f"/api/v1/applications/{id_}", query={"forceSave": force_save}, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -1376,7 +1376,7 @@ def update_appprofile_by_id(id_: str, body: dict) -> str:
         id_: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("PUT", f"/api/v1/appprofile/{id_}", query=None, body=body)
+    return call("PUT", f"/api/v1/appprofile/{id_}", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -1389,7 +1389,7 @@ def update_config_development_by_id(id_: str, body: dict) -> str:
         id_: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("PUT", f"/api/v1/config/development/{id_}", query=None, body=body)
+    return call("PUT", f"/api/v1/config/development/{id_}", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -1402,7 +1402,7 @@ def update_config_downloadclient_by_id(id_: str, body: dict) -> str:
         id_: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("PUT", f"/api/v1/config/downloadclient/{id_}", query=None, body=body)
+    return call("PUT", f"/api/v1/config/downloadclient/{id_}", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -1415,7 +1415,7 @@ def update_config_host_by_id(id_: str, body: dict) -> str:
         id_: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("PUT", f"/api/v1/config/host/{id_}", query=None, body=body)
+    return call("PUT", f"/api/v1/config/host/{id_}", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -1428,7 +1428,7 @@ def update_config_ui_by_id(id_: str, body: dict) -> str:
         id_: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("PUT", f"/api/v1/config/ui/{id_}", query=None, body=body)
+    return call("PUT", f"/api/v1/config/ui/{id_}", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -1441,7 +1441,7 @@ def update_customfilter_by_id(id_: str, body: dict) -> str:
         id_: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("PUT", f"/api/v1/customfilter/{id_}", query=None, body=body)
+    return call("PUT", f"/api/v1/customfilter/{id_}", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -1453,7 +1453,7 @@ def update_downloadclient_bulk(body: dict) -> str:
     Args:
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("PUT", "/api/v1/downloadclient/bulk", query=None, body=body)
+    return call("PUT", "/api/v1/downloadclient/bulk", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -1467,7 +1467,7 @@ def update_downloadclient_by_id(id_: str, body: dict, force_save: bool | None = 
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
         force_save: Query parameter.
     """
-    return call("PUT", f"/api/v1/downloadclient/{id_}", query={"forceSave": force_save}, body=body)
+    return call("PUT", f"/api/v1/downloadclient/{id_}", query={"forceSave": force_save}, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -1479,7 +1479,7 @@ def update_indexer_bulk(body: dict) -> str:
     Args:
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("PUT", "/api/v1/indexer/bulk", query=None, body=body)
+    return call("PUT", "/api/v1/indexer/bulk", query=None, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -1493,7 +1493,7 @@ def update_indexer_by_id(id_: str, body: dict, force_save: bool | None = None) -
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
         force_save: Query parameter.
     """
-    return call("PUT", f"/api/v1/indexer/{id_}", query={"forceSave": force_save}, body=body)
+    return call("PUT", f"/api/v1/indexer/{id_}", query={"forceSave": force_save}, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -1507,7 +1507,7 @@ def update_indexerproxy_by_id(id_: str, body: dict, force_save: bool | None = No
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
         force_save: Query parameter.
     """
-    return call("PUT", f"/api/v1/indexerproxy/{id_}", query={"forceSave": force_save}, body=body)
+    return call("PUT", f"/api/v1/indexerproxy/{id_}", query={"forceSave": force_save}, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -1521,7 +1521,7 @@ def update_notification_by_id(id_: str, body: dict, force_save: bool | None = No
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
         force_save: Query parameter.
     """
-    return call("PUT", f"/api/v1/notification/{id_}", query={"forceSave": force_save}, body=body)
+    return call("PUT", f"/api/v1/notification/{id_}", query={"forceSave": force_save}, body=body, form=None)
 
 
 @mcp.tool(annotations=_WRITE)
@@ -1534,4 +1534,4 @@ def update_tag_by_id(id_: str, body: dict) -> str:
         id_: Path parameter.
         body: Request payload. Read the matching GET or the /schema endpoint first to see the fields this resource expects.
     """
-    return call("PUT", f"/api/v1/tag/{id_}", query=None, body=body)
+    return call("PUT", f"/api/v1/tag/{id_}", query=None, body=body, form=None)
