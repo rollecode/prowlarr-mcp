@@ -86,6 +86,37 @@ claude mcp add prowlarr -- /path/to/prowlarr-mcp/.venv/bin/prowlarr-mcp
 
 Prowlarr replaces a record on PUT rather than merging, so read it first, change the fields you want and send the whole object back as `body`. For a new indexer, `list_indexer_schema` returns every definition Prowlarr knows and the fields each one needs.
 
+## Hosting it
+
+Running it over HTTP puts it in reach of Claude.ai as a custom connector, and of Claude Code on other machines. Three tiers, the same shape the other servers in this family use:
+
+| Tier | Port | What it does |
+| --- | --- | --- |
+| `prowlarr-mcp` | 8540 | The server. No login of its own, never exposed |
+| nginx | 8541 | Front door, behind a Cloudflare Tunnel |
+| `auth-server.js` | 8542 | OAuth 2.1 sign-in, or a fixed bearer token |
+
+```bash
+npm install
+node set-password.js 'a password for the sign-in page'
+printf 'PROWLARR_URL=...\n' > ~/.config/prowlarr-mcp/env
+chmod 600 ~/.config/prowlarr-mcp/env
+```
+
+Copy `systemd/*.service` into `/etc/systemd/system/`, replacing `YOUR_USER` and the `ISSUER` hostname, then:
+
+```bash
+sudo systemctl enable --now prowlarr-mcp prowlarr-mcp-auth
+```
+
+Point `nginx/prowlarr-mcp.conf` at your own hostname and send the tunnel at `127.0.0.1:8541`.
+
+Environment the server itself reads: `PROWLARR_URL, PROWLARR_API_KEY`. The sign-in page carries the Prowlarr mark and accent colour, set through `APP_NAME`, `APP_ACCENT` and `APP_BLURB` in the auth unit.
+
+### Claude.ai
+
+Settings, Connectors, Add custom connector, URL `https://prowlarr-mcp.your-domain/mcp`, client ID and secret blank. The sign-in page asks for the password set above. Connectors belong to the account, so adding it once covers mobile too.
+
 ## Development
 
 ```bash
