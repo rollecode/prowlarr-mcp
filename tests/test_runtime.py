@@ -100,4 +100,4 @@ def test_every_tool_registers():
     from prowlarr_mcp import tools  # noqa: F401 -- registers the tools
 
     registered = asyncio.run(runtime.mcp.list_tools())
-    assert len(registered) == 128
+    assert len(registered) == 129
