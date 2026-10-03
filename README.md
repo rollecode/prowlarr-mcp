@@ -21,6 +21,9 @@ Run Prowlarr from Claude.ai and Claude Code. All 128 operations of the v1 API ar
 
 <hr>
 
+> [!WARNING]
+> Using this server with a paid AI service costs money. Tool definitions and results are billed as input tokens, and an agent can call tools repeatedly on its own. You are responsible for every charge, so set spending limits with your provider. The author accepts no liability for any costs. See [DISCLAIMER.md](DISCLAIMER.md).
+
 ## Why not the other options
 
 Measured against `Prowlarr.Api.V1/openapi.json`, which has 93 paths and 128 non-HEAD operations:
